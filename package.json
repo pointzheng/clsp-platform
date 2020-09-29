@@ -1,0 +1,49 @@
+{
+  "name": "@folio/clsp-platform",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "stripes build stripes.config.js --okapi http://222.29.77.118:9130 --tenant testlib",
+    "stripes": "stripes",
+    "start": "stripes serve stripes.config.js --port 8080 --okapi http://222.29.77.118:9130 --tenant testlib",
+    "build-module-descriptors": "stripes mod descriptor stripes.config.js --output ./ModuleDescriptors",
+    "local": "f=stripes.config.js; test -f $f.local && f=$f.local; echo Using config $f; stripes serve $f",
+    "test": "echo 'No unit tests implemented'",
+    "test-int": "stripes test nightmare stripes.config.js",
+    "test-regression": "stripes test nightmare stripes.config.js --run WD/platform-core/checkout/users/inventory/requests/circulation/tenant-settings",
+    "lint": "eslint test/ui-testing"
+  },
+  "dependencies": {
+    "@folio/users": "4.0.6",
+    "@folio/inventory": "4.0.3",
+    "@folio/orders": "2.1.1",
+    "@folio/stripes": "4.1.4",
+    "@folio/plugin-create-item": "2.1.0",
+    "moment": "~2.25.3",
+    "react": "~16.13.1",
+    "react-dom": "~16.13.1",
+    "react-intl": "^4.5.3",
+    "react-redux": "^5.1.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^3.7.2",
+    "@material-ui/core": "^4.11.0",
+    "antd": "^4.6.2",
+    "echarts": "^4.9.0",
+    "echarts-for-react": "^2.0.16"
+  },
+  "devDependencies": {
+    "@folio/eslint-config-stripes": "^5.0.0",
+    "@folio/stripes-cli": "^1.16.0",
+    "babel-plugin-import": "^1.13.0",
+    "eslint": "^6.2.1",
+    "lodash": "^4.17.5"
+  },
+  "resolutions": {
+    "react-hot-loader": "4.8.8",
+    "rxjs": "^5.4.3",
+    "@folio/stripes-acq-components": "2.1.2",
+    "minimist": "^1.2.3",
+    "moment": "2.25.3"
+  }
+}
